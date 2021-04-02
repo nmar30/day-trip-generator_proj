@@ -22,11 +22,11 @@ function randomSelector(array){
     return arrayChoice;
 }
 function rerunRandomSelector (name, variable, array){
-    let answer = prompt("Your current destination is " + variable + "! Would you like to rerun (Yes|No)");
+    let answer = prompt("Your current " + name + " is " + variable + "! Would you like to rerun (Yes|No)");
     answer = answer.toLowerCase();
     while (answer === "yes") {
         variable = randomSelector(array);
-        answer = prompt("Your current destination is " + variable + "! Would you like to rerun (Yes|No)");
+        answer = prompt("Your current " + name + " is " + variable + "! Would you like to rerun (Yes|No)");
         answer = answer.toLowerCase();
     }
     return variable;
@@ -41,10 +41,10 @@ while (confirmTripBoolean === false){
         entertainment = randomSelector(entertainmentArray);
         ranOnce=true;
     } else {
-        destination = rerunRandomSelector("destination, destinationArray);
-        resturant = rerunRandomSelector(resturant, resturantArray);
-        transportation = rerunRandomSelector(transportation, transportationArray);
-        entertainment = rerunRandomSelector(entertainment, entertainmentArray);
+        destination = rerunRandomSelector("destination", destination, destinationArray);
+        resturant = rerunRandomSelector("resturant", resturant, resturantArray);
+        transportation = rerunRandomSelector("transportation", transportation, transportationArray);
+        entertainment = rerunRandomSelector("entertainment", entertainment, entertainmentArray);
         confirmTripBoolean = true;
     }
 }
